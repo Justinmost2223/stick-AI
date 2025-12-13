@@ -15,12 +15,13 @@
     --color-purple: #cc33ff;
     --color-yellow: #ffdd44;
 
-    /* NUEVAS VARIABLES DE ESPACIADO */
+    /* VARIABLES DE ESPACIADO CLAVE (Diseño más aireado/profesional) */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 2rem;
     --spacing-lg: 4rem;
     --spacing-xl: 6rem;
+    --spacing-2xl: 8rem;
 }
 
 * {
@@ -42,7 +43,6 @@ body.theme-dark {
 .text-glow { text-shadow: var(--shadow-neon); }
 .neon-text { color: var(--primary-color) !important; text-shadow: var(--shadow-neon); }
 .matrix-text { color: var(--primary-color) !important; }
-.text-fade { color: #888; }
 
 /* Efecto Matrix/Terminal */
 .matrix-border {
@@ -69,8 +69,7 @@ body.theme-dark {
 
 /* -------------------- Encabezado y Títulos -------------------- */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--spacing-md); }
-/* MUCHO MÁS ESPACIO EN EL CONTENIDO PRINCIPAL */
-.access-platform-main { padding: var(--spacing-xl) 0; }
+.access-platform-main { padding: var(--spacing-2xl) 0; }
 
 .header-intro {
     text-align: center; max-width: 1000px; margin: 0 auto var(--spacing-xl); 
@@ -83,20 +82,20 @@ body.theme-dark {
 .pulse-effect { animation: pulse 2s infinite alternate; }
 
 .explosive-title {
-    font-size: clamp(3.5rem, 5.5vw, 4.5rem); /* Títulos un poco más grandes */
+    font-size: clamp(3.5rem, 5.5vw, 4.5rem); 
     line-height: 1.1; margin-bottom: var(--spacing-sm); color: var(--text-color);
     text-transform: uppercase; letter-spacing: 4px;
 }
 .headline-explosion {
     font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1.2; color: var(--secondary-color);
-    margin-bottom: var(--spacing-lg); /* Más espacio después del subtítulo principal */
+    margin-bottom: var(--spacing-lg); 
     text-shadow: 0 0 15px var(--secondary-color), 0 0 40px rgba(255, 0, 255, 0.5); 
 }
 
-.intro-subtitle { font-size: 1.2rem; margin-bottom: var(--spacing-xl); line-height: 1.8; }
+.intro-subtitle { font-size: 1.2rem; margin-bottom: var(--spacing-2xl); line-height: 1.8; }
 
 .status-widget {
-    background-color: var(--bg-medium); padding: 1.5rem 3rem; /* Más padding horizontal */
+    background-color: var(--bg-medium); padding: 1.5rem 3rem; 
     display: inline-flex; align-items: center; gap: 1rem;
 }
 .status-widget i { font-size: 1.8rem; color: var(--secondary-color); text-shadow: 0 0 10px var(--secondary-color); }
@@ -104,41 +103,47 @@ body.theme-dark {
 /* -------------------- Tarjetas de Acceso -------------------- */
 .access-levels-grid {
     display: grid; 
-    gap: var(--spacing-lg); /* Más separación entre las tarjetas */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Tarjetas un poco más anchas */
+    gap: var(--spacing-2xl); /* GRAN ESPACIO ENTRE TARJETAS */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     padding-bottom: var(--spacing-xl);
 }
 
 .level-card {
     background: var(--bg-medium); 
-    padding: var(--spacing-lg) var(--spacing-md); /* Más padding dentro de la tarjeta */
+    padding: var(--spacing-xl) var(--spacing-md); 
     border: 3px solid;
     transition: all 0.4s cubic-bezier(0.2, 0.8, 0.5, 1);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
     position: relative;
     z-index: 1; 
 }
-
-/* Hover y Efecto Flotante */
 .level-card:hover {
     transform: translateY(-12px) scale(1.03);
     box-shadow: 0 15px 40px rgba(0, 255, 255, 0.6); 
 }
 
 .level-title { font-size: 1.9rem; margin-bottom: var(--spacing-xs); text-transform: uppercase; }
-.level-title, .level-price { text-shadow: 0 0 10px currentColor, 0 0 5px rgba(255, 255, 255, 0.5); }
 
 .level-price {
-    font-size: 4rem; /* Precio más grande */
+    font-size: 4.5rem; /* Precio más grande y dominante */
     font-weight: 700; display: block; margin-bottom: var(--spacing-md); color: #fff;
+    text-shadow: 0 0 15px #fff, 0 0 5px rgba(255, 255, 255, 0.5);
 }
-.level-tagline { font-size: 1rem; color: #ccc; height: 3.5rem; margin-bottom: var(--spacing-md); }
+.level-tagline { font-size: 1rem; color: #ccc; min-height: 3rem; margin-bottom: var(--spacing-lg); }
 
 /* Botón de WhatsApp (CTA) */
 .btn {
-    padding: 1.2rem 2.5rem; /* Botón más alto */
-    margin-top: var(--spacing-md); width: 100%;
-    /* Estilos se mantienen... */
+    background-color: #25d366; color: white; box-shadow: 0 0 15px rgba(37, 211, 102, 0.5);
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.7rem; 
+    padding: 1.2rem 2.5rem; border-radius: 2px; text-decoration: none; font-weight: 700;
+    transition: all 0.3s ease; cursor: pointer; border: none; text-transform: uppercase;
+    font-size: 1.1rem; margin-top: var(--spacing-lg); 
+    width: 100%;
+}
+.btn:hover {
+    background-color: #128c7e;
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(37, 211, 102, 0.8);
 }
 
 /* Sección de Beneficios */
@@ -147,13 +152,14 @@ body.theme-dark {
     border-top: 1px dashed rgba(255, 255, 255, 0.2);
 }
 .benefits-list h4 { font-size: 1rem; color: var(--secondary-color); margin-bottom: var(--spacing-sm); text-shadow: 0 0 5px var(--secondary-color); }
-.benefits-list li { margin-bottom: var(--spacing-xs); font-size: 0.95rem; color: #ddd; }
+.benefits-list li { margin-bottom: var(--spacing-xs); padding-left: var(--spacing-xs); font-size: 0.95rem; color: #ddd; }
+.benefits-list li i { color: var(--primary-color); font-size: 1rem; margin-top: 3px; }
 
 
 /* -------------------- SECCIÓN DEL EQUIPO FUNDADOR -------------------- */
 .team-credits {
-    padding: var(--spacing-lg) 0; /* Más padding arriba y abajo */
-    margin-top: var(--spacing-xl); /* Más separación del contenido de arriba */
+    padding: var(--spacing-2xl) 0; /* MUCHO MÁS ESPACIO */
+    margin-top: var(--spacing-2xl); 
     border-top: 2px solid var(--primary-color);
     border-bottom: 1px dashed rgba(0, 255, 255, 0.2);
     text-align: center;
@@ -161,23 +167,23 @@ body.theme-dark {
     box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
 }
 .team-credits h3 {
-    font-size: 1.8rem; /* Título del equipo más grande */
+    font-size: 1.8rem; 
     color: var(--secondary-color);
     text-transform: uppercase;
-    margin-bottom: var(--spacing-lg); /* Más espacio después del título */
+    margin-bottom: var(--spacing-lg); 
     text-shadow: 0 0 10px var(--secondary-color);
 }
 .team-grid {
     display: flex;
     justify-content: center;
-    gap: var(--spacing-xl); /* Más separación entre los miembros del equipo */
+    gap: var(--spacing-xl); 
     flex-wrap: wrap;
 }
 .team-member {
-    padding: var(--spacing-md) var(--spacing-lg); /* Más padding dentro del miembro */
+    padding: var(--spacing-md) var(--spacing-lg); 
     background: rgba(0, 255, 255, 0.05);
     border-left: 3px solid var(--primary-color);
-    min-width: 200px; /* Un poco más anchos */
+    min-width: 200px; 
     text-align: left;
 }
 .team-member h4 {
@@ -192,7 +198,7 @@ body.theme-dark {
 
 /* Footer */
 .footer-cta {
-    padding: var(--spacing-md) 0; /* Más espacio en el footer */
+    padding: var(--spacing-lg) 0; 
     text-align: center;
     color: #555; font-size: 0.8rem;
 }
@@ -208,15 +214,35 @@ body.theme-dark {
     transform: translateY(0) scale(1); 
 }
 
-/* Responsive */
+/* ========================================================= */
+/* DISEÑO RESPONSIVO (MÓVIL)               */
+/* ========================================================= */
 @media (max-width: 768px) {
+    .container { padding: 0 var(--spacing-sm); }
     .access-platform-main { padding: var(--spacing-lg) 0; }
+    
     .header-intro { margin-bottom: var(--spacing-lg); padding-top: var(--spacing-md); }
-    .explosive-title { font-size: 1.6rem; letter-spacing: 2px; }
-    .headline-explosion { font-size: 1.2rem; margin-bottom: var(--spacing-md); }
-    .access-levels-grid { grid-template-columns: 1fr; gap: var(--spacing-md); padding-bottom: var(--spacing-lg); }
-    .level-card { padding: var(--spacing-md); }
-    .team-credits { margin-top: var(--spacing-md); padding: var(--spacing-md) 0; }
+    .explosive-title { font-size: 1.8rem; letter-spacing: 2px; }
+    .headline-explosion { font-size: 1.3rem; margin-bottom: var(--spacing-md); }
+    .intro-subtitle { font-size: 1rem; margin-bottom: var(--spacing-lg); }
+    .status-widget { padding: 1rem 2rem; display: block; }
+    .status-widget p { margin-top: var(--spacing-xs); }
+    
+    /* Las tarjetas se apilan en una sola columna */
+    .access-levels-grid { grid-template-columns: 1fr; gap: var(--spacing-lg); padding-bottom: var(--spacing-md); }
+    .level-card { padding: var(--spacing-lg) var(--spacing-md); }
+    .level-price { font-size: 4rem; margin-bottom: var(--spacing-xs); }
+    .level-tagline { min-height: auto; margin-bottom: var(--spacing-md); }
+    .btn { padding: 1rem 2rem; margin-top: var(--spacing-md); }
+
+    .team-credits { margin-top: var(--spacing-lg); padding: var(--spacing-md) 0; }
     .team-grid { gap: var(--spacing-md); }
-    .team-member { min-width: 100%; text-align: center; } /* Centrado en móvil */
+    /* Ajuste de la tarjeta de equipo para móvil */
+    .team-member { 
+        min-width: 100%; 
+        text-align: center; 
+        border-left: none; 
+        border-bottom: 3px solid var(--primary-color);
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
 }
