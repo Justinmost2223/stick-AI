@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- CONFIGURACIÓN Y SELECTORES ---
-    const dataModules = document.querySelectorAll('.data-module, .team-credits'); // Añadido .team-credits
+    const dataModules = document.querySelectorAll('.data-module, .team-credits'); 
     const joinBtns = document.querySelectorAll('.btn-join');
     
     // El número de teléfono al que se enviará el mensaje (formato internacional sin signos: 34611341009)
